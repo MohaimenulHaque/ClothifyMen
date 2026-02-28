@@ -13,7 +13,10 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Panjabi<i class="fa-solid fa-angle-down"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Shirt</a>
                 </li>
 
 
@@ -25,17 +28,3 @@
         </div>
     </div>
 </nav>
-<div class="subNav">
-    
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Panjabi</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Shirt</a>
-        </li>
-
-
-    </ul>
-
-</div>
