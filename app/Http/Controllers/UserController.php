@@ -9,12 +9,18 @@ class UserController extends Controller
 {
     public function index(){
 
-        if(Auth::check() && Auth::user()->user_type=='admin'){
-            return view('admin.dashboard');
+
+        if(Auth::check() && Auth::user()->user_type=='user'){
+            return view('/');
         }
-        elseif(Auth::check() && Auth::user()->user_type=='user'){
-            return view('dashboard');
-        }
+
+
+        // if(Auth::check() && Auth::user()->user_type=='admin'){
+        //     return view('admin.dashboard');
+        // }
+        // elseif(Auth::check() && Auth::user()->user_type=='user'){
+        //     return view('/');
+        // }
 
     }
 }

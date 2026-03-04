@@ -1,15 +1,19 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpFoundation\RequestMatcher\HeaderRequestMatcher;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
-Route::get('home', function () {
-    return view('home');
-});
+
+
+Route::get('shop', function () {
+    return view('shop');
+})->name('shop');
 
 
 Route::get('/test', function () {
@@ -17,11 +21,8 @@ Route::get('/test', function () {
 })->name('test');
 
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/dashboard',[UserController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard',[UserController::class,'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -31,4 +32,12 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+
+
+// ------------------------------------------
+// Admin Authentication HeaderRequestMatcher
+// ------------------------------------------
+Route::middleware('admin')->group(function(){
+    Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
+});
 
