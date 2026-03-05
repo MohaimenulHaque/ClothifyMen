@@ -57,7 +57,7 @@
                         </a>
                         <a href="{{ route('register') }}">
                             <i class="fa fa-user" aria-hidden="true"></i>
-                            <span class="text-white">Register</span>
+                            <span>Register</span>
                         </a>
 
 

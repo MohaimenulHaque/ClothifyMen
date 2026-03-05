@@ -39,5 +39,6 @@ require __DIR__.'/auth.php';
 // ------------------------------------------
 Route::middleware('admin')->group(function(){
     Route::get('/dashboard',[AdminController::class,'dashboard'])->name('dashboard');
+    Route::get('/categories',[AdminController::class,'categories'])->name('categories');
 });
 
