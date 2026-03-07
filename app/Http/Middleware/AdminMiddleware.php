@@ -19,7 +19,11 @@ class AdminMiddleware
         if (Auth::check() && Auth::user()->user_type == 'admin') {
             return $next($request);
         }
-        abort(401, 'Unauthorized Access');
+        else{
+            return redirect( route('login'));
+
+            // abort(401, 'Unauthorized Access');
+        }
 
     }
 }
