@@ -1,8 +1,8 @@
 @extends('layouts.starterTemplate')
 
-{{-- @section('dashboard_title')
-Category
-@endsection --}}
+@section('dashboard_title')
+{{Str::upper(request()->path())}}
+@endsection
 
 @section('main_section')
 
@@ -38,13 +38,15 @@ Category
                     @foreach ($getCategory as $Category)
                     
                         <tr>
-                            <th scope="row">{{ $Category->id }}</th>
+                            {{-- <th scope="row">{{ $Category->id }}</th> --}}
+                            <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $Category->category_name }}</td>
                             <td>
                                 <img src="upload/categories/{{  $Category->img }}" style="width:100px;" alt="">
                             </td>
                             <td>
                                 <a href="{{ route('editCategory', Crypt::encrypt($Category->id) ) }}" class="bg-success px-2 py-1 rounded text-white text-decoration-none">Edit</a>
+                                <a href="{{ route('deleteCategory', Crypt::encrypt($Category->id) ) }}" class="bg-danger px-2 py-1 rounded text-white text-decoration-none">Delete</a>
                             </td>
                         </tr>
     

@@ -89,8 +89,8 @@
       <div class="page-header">
         <div class="container-fluid">
           <h2 class="h5 no-margin-bottom">
-            {{ Str::upper(request()->path())  }}
-            {{-- @yield('dashboard_title') --}}
+            {{-- {{ Str::upper(request()->path())  }} --}}
+            @yield('dashboard_title')
           </h2>
         </div>
       </div>
@@ -108,8 +108,9 @@
         <div class="footer__block block no-margin-bottom">
           <div class="container-fluid text-center">
             <!-- Please do not remove the backlink to us unless you support us at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-            <p class="no-margin-bottom">2018 &copy; Your company. Download From <a target="_blank"
-                href="https://templateshub.net">Templates Hub</a>.</p>
+            <p class="no-margin-bottom">{{date('Y')}} &copy; <span class="text-primary">Clothify Men</span>. Developed by 
+              <span class="text-primary">Mohaimenul Haque</span>
+            </p>
           </div>
         </div>
       </footer>
