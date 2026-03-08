@@ -14,11 +14,10 @@
     <ul class="list-unstyled">
         <li class="{{ request()->is('dashboard') ? 'active' : '' }}"><a href="{{ route('dashboard') }}"> <i class="icon-home"></i>Home </a></li>
         <li class="{{ request()->is('categories') ? 'active' : '' }}"><a href="{{ route('categories') }}"> <i class="icon-grid"></i>Categories </a></li>
-        <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
+        <li class="{{ request()->is('admin.products')? 'active' : '' }}"><a href="{{ route('admin.products') }}"> <i class="fa fa-bar-chart"></i>Products </a></li>
         <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
 
-        <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i
-                    class="icon-windows"></i>Example dropdown </a>
+        <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Example dropdown </a>
             <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                 <li><a href="#">Page</a></li>
                 <li><a href="#">Page</a></li>

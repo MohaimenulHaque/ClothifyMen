@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->string('product_name');
             $table->string('img');
-            $table->longText('descrption')->nullable();
+            $table->longText('description')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

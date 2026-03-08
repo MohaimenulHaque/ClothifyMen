@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -45,5 +46,11 @@ Route::middleware('admin')->group(function(){
     Route::get('/editCategory/{id}',[AdminController::class,'editCategory'])->name('editCategory');
     Route::post('/updateCategory/{id}',[AdminController::class,'updateCategory'])->name('updateCategory');
     Route::get('/deleteCategory/{id}',[AdminController::class,'deleteCategory'])->name('deleteCategory');
+
+
+    // Product Controller Start Here
+    Route::get('admin/products',[ProductController::class,'products'])->name('admin.products');
+    Route::get('admin/addProduct',[ProductController::class,'addProduct'])->name('admin.addProduct');
+    Route::post('admin/storeProduct',[ProductController::class,'storeProduct'])->name('admin.storeProduct');
 });
 

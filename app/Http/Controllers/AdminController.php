@@ -102,6 +102,7 @@ class AdminController extends Controller
     public function deleteCategory($id){
         $decryptId = Crypt::decrypt($id);
         $deleteCategory = Category::findOrFail($decryptId);
+        unlink(public_path('upload/categories/' . $deleteCategory->img));
         $deleteCategory-> delete();
         return redirect()->route('categories')->with('success', 'Delete category successfully');
     }
