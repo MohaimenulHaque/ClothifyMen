@@ -1,5 +1,9 @@
 @extends('layouts.starterTemplate')
 
+{{-- @section('dashboard_title')
+Category
+@endsection --}}
+
 @section('main_section')
 
     @if (session('success'))
@@ -40,15 +44,14 @@
                                 <img src="upload/categories/{{  $Category->img }}" style="width:100px;" alt="">
                             </td>
                             <td>
-                                <a href="" class="bg-success px-2 py-1 rounded text-white text-decoration-none">Edit</a>
-    
+                                <a href="{{ route('editCategory', Crypt::encrypt($Category->id) ) }}" class="bg-success px-2 py-1 rounded text-white text-decoration-none">Edit</a>
                             </td>
                         </tr>
     
                     @endforeach
                 </tbody>
             </table>
-            
+
         </div>
 
     </div>

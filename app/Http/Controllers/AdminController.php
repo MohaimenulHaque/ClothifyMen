@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class AdminController extends Controller
 {
@@ -45,5 +46,12 @@ class AdminController extends Controller
         return redirect()->route('categories')->with('success', 'Add category successfully');
 
 
+    }
+
+    
+    public function editCategory($id){
+        $decryptId = Crypt::decrypt($id);
+        $getEditCategory = Category::findOrFail($decryptId);
+        return view('admin.editCategory', compact('getEditCategory'));
     }
 }

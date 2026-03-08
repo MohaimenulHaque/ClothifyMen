@@ -88,7 +88,10 @@
     <div class="page-content">
       <div class="page-header">
         <div class="container-fluid">
-          <h2 class="h5 no-margin-bottom">{{ Str::upper(request()->path())  }}</h2>
+          <h2 class="h5 no-margin-bottom">
+            {{ Str::upper(request()->path())  }}
+            {{-- @yield('dashboard_title') --}}
+          </h2>
         </div>
       </div>
 

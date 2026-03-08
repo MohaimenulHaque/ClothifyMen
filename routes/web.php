@@ -42,5 +42,6 @@ Route::middleware('admin')->group(function(){
     Route::get('/categories',[AdminController::class,'categories'])->name('categories');
     Route::get('/addCategory',[AdminController::class,'addCategory'])->name('addCategory');
     Route::post('/storeCategory',[AdminController::class,'storeCategory'])->name('storeCategory');
+    Route::get('/editCategory/{id}',[AdminController::class,'editCategory'])->name('editCategory');
 });
 
