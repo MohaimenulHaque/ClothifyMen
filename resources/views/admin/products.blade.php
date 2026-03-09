@@ -6,19 +6,6 @@
 
 @section('main_section')
 
-    @if (session('success'))
-
-        <div class="alert alert-success" id="alert">
-            {{ session('success') }}
-        </div>
-
-        <script>
-            setTimeout(() => {
-                document.getElementById('alert').style.display = 'none';
-            }, 3000);
-        </script>
-    @endif
-
     <div class="m-4">
         <a class=" bg-primary p-2 text-white text-decoration-none rounded float-right" href="{{ route('admin.addProduct') }}">+
             Add Product</a>

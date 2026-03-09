@@ -50,7 +50,8 @@ class AdminController extends Controller
 
         // return $request->all();
         $category->save();
-        return redirect()->route('categories')->with('success', 'Add category successfully');
+        flash()->success('Delete category successfully');
+        return redirect()->route('categories');
 
 
     }
@@ -96,7 +97,8 @@ class AdminController extends Controller
         $category->description = $request->description;
 
         $category->save();
-        return redirect()->route('categories')->with('success', 'Update category successfully');
+        flash()->success('Delete category successfully');
+        return redirect()->route('categories');
     }
 
     public function deleteCategory($id){
@@ -104,7 +106,8 @@ class AdminController extends Controller
         $deleteCategory = Category::findOrFail($decryptId);
         unlink(public_path('upload/categories/' . $deleteCategory->img));
         $deleteCategory-> delete();
-        return redirect()->route('categories')->with('success', 'Delete category successfully');
+        flash()->success('Delete category successfully');
+        return redirect()->route('categories');
     }
 
 

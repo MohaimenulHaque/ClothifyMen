@@ -1,5 +1,9 @@
 @extends('layouts.starterTemplate')
 
+@section('dashboard_title')
+    {{Str::upper('Edit Product')}}
+@endsection
+
 @section('main_section')
 
     <div class="container">
@@ -29,11 +33,26 @@
                                     <select name="category" id="" class="form-control mb-2 bg-dark">
                                         <option value=""></option>
                                         @foreach ($categories as $categoryData)
-                                            <option value="{{ $categoryData->id }}" {{ $categoryData->id ? 'selected' : '' }}>{{ $categoryData->category_name }}</option>
+                                            <option value="{{ $categoryData->id }}" {{ $categoryData->id ? 'selected' : '' }}>
+                                                {{ $categoryData->category_name }}</option>
                                         @endforeach
                                     </select>
 
                                     @error('category')<div class="text-danger">{{ $message }}</div>@enderror
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <label for="">Price*</label>
+                                    <input type="text" name="price" placeholder="Enter Price" value="{{ $getEditProduct->price }}"
+                                        class="form-control mb-2">
+                                    @error('price')<div class="text-danger">{{ $message }}</div>@enderror
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <label for="">Regular Price</label>
+                                    <input type="text" name="regular_price" placeholder="Enter Regular Price"
+                                        value="{{ $getEditProduct->regular_price }}" class="form-control mb-2">
+                                    @error('regular_price')<div class="text-danger">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="col-md-6 mb-2">
@@ -43,6 +62,13 @@
                                     @error('image')<div class="text-danger">{{ $message }}</div>@enderror
                                     <img src="{{ asset('upload/products/' . $getEditProduct->img) }}" id="showImage"
                                         style="width: 100px; height: 100px;" alt="">
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <label for="">Quantity</label>
+                                    <input type="text" name="quantity" placeholder="Enter Quantity"
+                                        value="{{ $getEditProduct->quantity }}" class="form-control mb-2">
+                                    @error('quantity')<div class="text-danger">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="col-md-12 mb-2">
