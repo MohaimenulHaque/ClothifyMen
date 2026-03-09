@@ -42,7 +42,7 @@
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $Category->category_name }}</td>
                             <td>
-                                <img src="upload/categories/{{  $Category->img }}" style="width:100px;" alt="">
+                                <img src="{{ asset('upload/categories/'. $Category->img) }}" style="width:100px;" alt="">
                             </td>
                             <td>
                                 <a href="{{ route('editCategory', Crypt::encrypt($Category->id) ) }}" class="bg-success px-2 py-1 rounded text-white text-decoration-none">Edit</a>

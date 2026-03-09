@@ -29,30 +29,30 @@
                 <thead class="">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Category</th>
+                        <th scope="col">Products</th>
                         <th scope="col">Image</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    {{-- @foreach ($getCategory as $Category)
+                    @foreach ($fatchProduct as $products)
 
                         <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
-                            <td>{{ $Category->category_name }}</td>
+                            <td>{{ $products->product_name }}</td>
                             <td>
-                                <img src="upload/categories/{{  $Category->img }}" style="width:100px;" alt="">
+                                <img src="{{ asset('upload/products/'. $products->img) }}" style="width:100px;" alt="">
                             </td>
                             <td>
-                                <a href="{{ route('editCategory', Crypt::encrypt($Category->id)) }}"
+                                <a href="{{ route('admin.editProduct', Crypt::encrypt($products->id)) }}"
                                     class="bg-success px-2 py-1 rounded text-white text-decoration-none">Edit</a>
-                                <a href="{{ route('deleteCategory', Crypt::encrypt($Category->id)) }}"
+                                <a href="{{ route('admin.deleteProduct', Crypt::encrypt($products->id)) }}"
                                     class="bg-danger px-2 py-1 rounded text-white text-decoration-none">Delete</a>
                             </td>
                         </tr>
 
-                    @endforeach --}}
+                    @endforeach
 
                 </tbody>
             </table>
