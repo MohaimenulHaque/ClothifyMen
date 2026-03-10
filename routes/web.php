@@ -59,6 +59,7 @@ Route::middleware('admin')->group(function(){
 
 
     Route::get('admin/settings/webSettings',[AdminController::class,'webSettings'])->name('admin.webSettings');
+    Route::post('admin/settings/storeWebSettings',[AdminController::class,'storeWesSettins'])->name('admin.storeWesSettins');
 
     Route::get('admin/settings/page2',function(){
         return view('admin.page2');

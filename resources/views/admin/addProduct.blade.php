@@ -22,7 +22,7 @@
 
                                 <div class="col-md-6 mb-2">
                                     <label for="">Name*</label>
-                                    <input type="text" name="name" placeholder="Enter Cateory Name"
+                                    <input type="text" name="name" placeholder="Enter Product Name"
                                         value="{{ old('name') }}" class="form-control mb-2">
                                     @error('name')<div class="text-danger">{{ $message }}</div>@enderror
                                 </div>
@@ -94,6 +94,6 @@
             </div>
         </div>
     </div>
-    <script>
+
 
 @endsection
