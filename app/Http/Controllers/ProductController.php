@@ -83,7 +83,7 @@ class ProductController extends Controller
                 unlink(public_path('upload/products/' . $product->img));
             }
 
-            $image = $request->file('img');
+            $image = $request->file('image');
             $image_name = $image->getClientOriginalName();
             $image->move(public_path('upload/products/'), $image_name);
 

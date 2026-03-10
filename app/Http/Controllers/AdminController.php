@@ -111,4 +111,13 @@ class AdminController extends Controller
     }
 
 
+
+    // ------------------------
+    //  webSettings Controller
+    // ------------------------
+
+    public function webSettings(){
+        return view('admin.webSettings');
+    }
+
 }

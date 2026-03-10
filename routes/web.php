@@ -55,5 +55,14 @@ Route::middleware('admin')->group(function(){
     Route::get('admin/editProduct/{id}',[ProductController::class,'editProduct'])->name('admin.editProduct');
     Route::post('admin/updateProduct/{id}',[ProductController::class,'updateProduct'])->name('admin.updateProduct');
     Route::get('admin/deleteProduct/{id}',[ProductController::class,'deleteProduct'])->name('admin.deleteProduct');
+
+
+
+    Route::get('admin/settings/webSettings',[AdminController::class,'webSettings'])->name('admin.webSettings');
+
+    Route::get('admin/settings/page2',function(){
+        return view('admin.page2');
+    })->name('admin.page2');
+
 });
 

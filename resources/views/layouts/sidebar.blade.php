@@ -14,14 +14,17 @@
     <ul class="list-unstyled">
         <li class="{{ request()->is('dashboard') ? 'active' : '' }}"><a href="{{ route('dashboard') }}"> <i class="icon-home"></i>Home </a></li>
         <li class="{{ request()->is('categories') ? 'active' : '' }}"><a href="{{ route('categories') }}"> <i class="icon-grid"></i>Categories </a></li>
-        <li class="{{ request()->is('admin.products')? 'active' : '' }}"><a href="{{ route('admin.products') }}"> <i class="fa fa-bar-chart"></i>Products </a></li>
+        <li class="{{ request()->is('admin/products')? 'active' : '' }}"><a href="{{ route('admin.products') }}"> <i class="fa fa-bar-chart"></i>Products </a></li>
         <li><a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
 
-        <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Example dropdown </a>
-            <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+        <li><a href="#exampledropdownDropdown" aria-expanded="{{ request()->is('admin/webSettings') ? 'true' : 'false' }}" data-toggle="collapse"> <i class="icon-settings"></i>Settings </a>
+            
+            <ul id="exampledropdownDropdown" class="collapse list-unstyled {{ request()->is('admin/settings/*') ? 'show' : '' }}">
+
+                <li class="{{ request()->is('admin/settings/webSettings') ? 'active' : '' }}"><a href="{{ route('admin.webSettings') }}">Web Settings</a></li>
+                <li class="{{ request()->is('admin/settings/page2') ? 'active' : '' }}"><a href="{{ route('admin.page2') }}">Page2</a></li>
                 <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
+                
             </ul>
         </li>
         <li><a href=""> <i class="icon-logout"></i>Login page </a></li>
