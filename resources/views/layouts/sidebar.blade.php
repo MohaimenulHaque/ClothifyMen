@@ -3,9 +3,9 @@
 
     <!-- Sidebar Header-->
     <div class="sidebar-header d-flex align-items-center">
-        <div class="avatar"><img src="{{ asset('frontend/img/Favicon.png') }}" alt="..." class="img-fluid rounded-circle"></div>
+        <div class="avatar"><img src="{{ asset('upload/web_img/'.($getWebData->logo ?: 'default_img.png' )) }}" alt="..." class="img-fluid rounded-circle"></div>
         <div class="title">
-            <h1 class="h5">Clothify Men</h1>
+            <h1 class="h5">{{ $getWebData->website_name ?: 'Laravel' }}</h1>
             <p>Admin</p>
         </div>
     </div>

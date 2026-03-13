@@ -120,7 +120,8 @@ class AdminController extends Controller
 
     public function webSettings()
     {
-        return view('admin.webSettings');
+        $fetchSettingsData = WebSettings::first();
+        return view('admin.webSettings', compact('fetchSettingsData'));
     }
     public function storeWesSettins(Request $request)
     {
@@ -133,19 +134,37 @@ class AdminController extends Controller
             'logo' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
             'favicon' => 'nullable|image|mimes:png,jpg,jpeg,ico|max:1024',
         ]);
+        
+        // Get first row or create new instance
+        $settings = WebSettings::firstOrNew(['id' => 1]); 
 
-        $settings = new WebSettings();
+        if($request->hasFile('logo')) {
 
-        $logo = $request->file('logo');
-        $logo_name = $logo->getClientOriginalName();
-        $logo->move(public_path('upload/web_img/'),$logo_name);
+            if ($settings->logo && file_exists(public_path('upload/web_img/' . $settings->logo))) {
+                unlink(public_path('upload/products/' . $settings->logo));
+            }
 
-        $favicon = $request->file('favicon');
-        $favicon_name = $favicon->getClientOriginalName();
-        $favicon->move(public_path('upload/web_img/'),$favicon_name);
+            $logo = $request->file('logo');
+            $logo_name = $logo->getClientOriginalName();
+            $logo->move(public_path('upload/web_img/'),$logo_name);
+    
+            $settings->logo = $logo_name;
 
-        $settings->$logo;
-        $settings->$favicon;
+        }
+
+        if($request->hasFile(key: 'favicon')){
+
+            if ($settings->favicon && file_exists(public_path('upload/web_img/' . $settings->favicon))) {
+                unlink(public_path('upload/products/' . $settings->favicon));
+            }
+
+            $favicon = $request->file('favicon');
+            $favicon_name = $favicon->getClientOriginalName();
+            $favicon->move(public_path('upload/web_img/'),$favicon_name);
+
+            $settings->favicon = $favicon_name;
+        }
+
 
         $settings->website_name = $request->name;
         $settings->email = $request->email;

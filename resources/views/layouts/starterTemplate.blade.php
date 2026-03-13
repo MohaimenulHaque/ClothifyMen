@@ -22,7 +22,7 @@
   <!-- Custom stylesheet - for your changes-->
   <link rel="stylesheet" href="{{ asset('admin/css/custom.css') }}">
   <!-- Favicon-->
-  <link rel="shortcut icon" href="{{ asset('frontend/img/Favicon.png') }}">
+  <link rel="shortcut icon" href="{{ asset('upload/web_img/'.($getWebData->favicon ?: '')) }}">
 
 </head>
 
@@ -47,9 +47,9 @@
 
           <!-- Navbar Header-->
           <a href="index.html" class="navbar-brand">
-            <div class="brand-text brand-big visible text-uppercase"><strong
-                class="text-primary">Dark</strong><strong>Admin</strong></div>
-            <div class="brand-text brand-sm"><strong class="text-primary">D</strong><strong>A</strong></div>
+            <div class="brand-text brand-big visible text-uppercase">
+              <strong class="text-primary">{{ $getWebData->website_name ?: 'Laravel' }}</strong></div>
+            <div class="brand-text brand-sm"><strong class="text-primary">C</strong><strong>M</strong></div>
           </a>
 
           <!-- Sidebar Toggle Btn-->
@@ -108,7 +108,7 @@
         <div class="footer__block block no-margin-bottom">
           <div class="container-fluid text-center">
             <!-- Please do not remove the backlink to us unless you support us at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
-            <p class="no-margin-bottom">{{date('Y')}} &copy; <span class="text-primary">Clothify Men</span>. Developed by 
+            <p class="no-margin-bottom">{{date('Y')}} &copy; <span class="text-primary">{{  $getWebData->website_name ?: 'Laravel' }}</span>. Developed by 
               <span class="text-primary">Mohaimenul Haque</span>
             </p>
           </div>
