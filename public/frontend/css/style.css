@@ -70,7 +70,7 @@ body {
 
 #navbarSupportedContent {
   width: 100%;
-  background-color: rgb(209, 9, 9);
+  /* background-color: rgb(0, 0, 0); */
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -103,6 +103,9 @@ body {
   color: black;
 }
 
+#navbarSupportedContent .user_option a {
+  color: rgb(168, 168, 168);
+}
 #navbarSupportedContent .user_option a:hover {
   color: white;
 }
@@ -442,8 +445,11 @@ width: 100%;
   justify-content: space-between;
 } */
 
-.shop_section .box .detail-box h6 span {
+.shop_section .box h6 {
   color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .shop_section .box .price {

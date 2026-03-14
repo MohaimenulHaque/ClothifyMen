@@ -4,42 +4,9 @@
 @section('slide_section')
 
     <!-- slider section -->
-    <section class="slider_section">
-        <div class="slider_container">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-7">
-                                    <div class="detail-box">
-                                        <h1>
-                                            Welcome To Our <br>
-                                            Gift Shop
-                                        </h1>
-                                        <p>
-                                            Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non
-                                            necessitatibus error distinctio mollitia suscipit. Nostrum fugit
-                                            doloribus consequatur distinctio esse, possimus maiores aliquid repellat
-                                            beatae cum, perspiciatis enim, accusantium perferendis.
-                                        </p>
-                                        <a href="">
-                                            Contact Us
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-5 ">
-                                    <div class="img-box">
-                                        <img style="width:600px" src="frontend/images/image3.jpeg" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
+    <section class="slider_section container">
+        <div class="w-100 m-0 p-0">
+            <img style=" width: 100%;" src="frontend/img/img1.jpg" alt="" />
         </div>
     </section>
     <!-- end slider section -->
@@ -60,14 +27,14 @@
             </div>
             <div class="row">
 
-                @foreach ($getProduct as $product)
-                
-                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-2">
+                @foreach ($getLatestProduct as $product)
+
+                    <div class="col-4 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-2">
                         <div class="box">
 
                             <a href="#">
                                 <div class="img-box mb-2">
-                                    <img src="{{ asset('upload/products/'. $product->img ) }}" alt="">
+                                    <img src="{{ asset('upload/products/' . $product->img) }}" alt="">
 
                                     <div class="overlay">
                                         <p class="view-product">View Product</p>
@@ -79,7 +46,7 @@
                                 </div>
                             </a>
 
-                            
+
                             <div class="bottom-part d-flex flex-column justify-center text-center">
 
                                 <h6 class="m-0">{{ $product->product_name }}</h6>
@@ -87,16 +54,16 @@
                                     <span class="price">৳{{ $product->price }}</span>
 
                                     @if ($product->regular_price)
-                                    <span class="regular_price">
-                                        ৳<s>{{ $product->regular_price }}</s>
-                                    </span>
+                                        <span class="regular_price">
+                                            ৳<s>{{ $product->regular_price }}</s>
+                                        </span>
                                     @endif
                                 </h6>
- 
+
                                 <div class="discount">
                                     <span>20%</span>
                                 </div>
-    
+
                                 <button class="btn btn-dark w-100">Add to Cart</button>
 
                             </div>

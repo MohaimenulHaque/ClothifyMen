@@ -38,6 +38,10 @@ class ProductController extends Controller
         // Uploade Image
         $image = $request->file('image');
         $image_name = $image->getClientOriginalName();
+        // Check if image already exists
+        if (file_exists(public_path('upload/products/' . $image_name))) {
+            return back()->with('error', 'Image already uploaded!');
+        }
         $image->move(public_path('upload/products'), $image_name);
 
 

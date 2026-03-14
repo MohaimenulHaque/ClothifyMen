@@ -25,7 +25,7 @@ class UserController extends Controller
 
     }
     public function home(){
-        $getProduct = Product::all();
-        return view('welcome', compact('getProduct'));
+        $getLatestProduct = Product::latest()->take(6)->get();
+        return view('welcome', compact('getLatestProduct'));
     }
 }
