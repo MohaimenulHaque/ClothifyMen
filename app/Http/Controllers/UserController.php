@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,5 +23,9 @@ class UserController extends Controller
         //     return view('/');
         // }
 
+    }
+    public function home(){
+        $getProduct = Product::all();
+        return view('welcome', compact('getProduct'));
     }
 }

@@ -30,7 +30,7 @@
                                 </div>
                                 <div class="col-md-5 ">
                                     <div class="img-box">
-                                        <img style="width:600px" src="images/image3.jpeg" alt="" />
+                                        <img style="width:600px" src="frontend/images/image3.jpeg" alt="" />
                                     </div>
                                 </div>
                             </div>
@@ -59,206 +59,55 @@
                 </h2>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="images/p1.png" alt="">
-                            </div>
-                            <div class="detail-box">
+
+                @foreach ($getProduct as $product)
+                
+                    <div class="col-6 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-2">
+                        <div class="box">
+
+                            <a href="#">
+                                <div class="img-box mb-2">
+                                    <img src="{{ asset('upload/products/'. $product->img ) }}" alt="">
+
+                                    <div class="overlay">
+                                        <p class="view-product">View Product</p>
+                                    </div>
+
+                                    <div class="new">
+                                        <span>New</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            
+                            <div class="bottom-part d-flex flex-column justify-center text-center">
+
+                                <h6 class="m-0">{{ $product->product_name }}</h6>
                                 <h6>
-                                    Ring
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $200
+                                    <span class="price">৳{{ $product->price }}</span>
+
+                                    @if ($product->regular_price)
+                                    <span class="regular_price">
+                                        ৳<s>{{ $product->regular_price }}</s>
                                     </span>
+                                    @endif
                                 </h6>
+ 
+                                <div class="discount">
+                                    <span>20%</span>
+                                </div>
+    
+                                <button class="btn btn-dark w-100">Add to Cart</button>
+
                             </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
+
+
+                        </div>
+
                     </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="images/p2.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Watch
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $300
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="images/p3.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Teddy Bear
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $110
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="images/p4.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Flower Bouquet
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $45
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="images/p5.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Teddy Bear
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $95
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="images/p6.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Flower Bouquet
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $70
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="images/p7.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Watch
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $400
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="box">
-                        <a href="">
-                            <div class="img-box">
-                                <img src="images/p8.png" alt="">
-                            </div>
-                            <div class="detail-box">
-                                <h6>
-                                    Ring
-                                </h6>
-                                <h6>
-                                    Price
-                                    <span>
-                                        $450
-                                    </span>
-                                </h6>
-                            </div>
-                            <div class="new">
-                                <span>
-                                    New
-                                </span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+
+                @endforeach
+
             </div>
             <div class="btn-box">
                 <a href="">
@@ -271,7 +120,7 @@
 
 
 
-    <!-- contact section -->
+    {{-- <!-- contact section -->
     <section class="contact_section ">
         <div class="container px-0">
             <div class="heading_container ">
@@ -318,96 +167,10 @@
     </section>
 
     <br><br><br>
-    <!-- end contact section -->
+    <!-- end contact section --> --}}
 
 
 
-    <!-- info section -->
-    <section class="info_section  layout_padding2-top">
-        <div class="social_container">
-            <div class="social_box">
-                <a href="">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                    <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                    <i class="fa fa-youtube" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-        <div class="info_container ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-lg-3">
-                        <h6>
-                            ABOUT US
-                        </h6>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-                            consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-                        </p>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="info_form ">
-                            <h5>
-                                Newsletter
-                            </h5>
-                            <form action="#">
-                                <input type="email" placeholder="Enter your email">
-                                <button>
-                                    Subscribe
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <h6>
-                            NEED HELP
-                        </h6>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-                            consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-                        </p>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <h6>
-                            CONTACT US
-                        </h6>
-                        <div class="info_link-box">
-                            <a href="">
-                                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <span> Gb road 123 london Uk </span>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-phone" aria-hidden="true"></i>
-                                <span>+01 12345678901</span>
-                            </a>
-                            <a href="">
-                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                                <span> demo@gmail.com</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- footer section -->
-        <footer class=" footer_section">
-            <div class="container">
-                <p>
-                    &copy; <span id="displayYear"></span> All Rights Reserved By
-                    <a href="https://html.design/">Web Tech Knowledge</a>
-                </p>
-            </div>
-        </footer>
-        <!-- footer section -->
 
-    </section>
-    <!-- end info section -->
 
 @endsection

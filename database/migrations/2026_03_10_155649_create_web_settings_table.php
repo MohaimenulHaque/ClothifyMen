@@ -18,9 +18,10 @@ return new class extends Migration
             $table->string('favicon')->nullable();
             $table->string('email')->nullable();
             $table->string('contact')->nullable();
+            $table->string('address')->nullable();
             $table->string('facebook_link')->nullable();
             $table->string('instagram_link')->nullable();
-            $table->string('linkedin_link')->nullable();
+            $table->string('youtube_link')->nullable();
             $table->timestamps();
         });
     }

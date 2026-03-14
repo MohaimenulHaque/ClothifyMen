@@ -7,9 +7,11 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpFoundation\RequestMatcher\HeaderRequestMatcher;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
+
+Route::get('/', [UserController::class, 'home'])->name('home');
 
 
 Route::get('shop', function () {

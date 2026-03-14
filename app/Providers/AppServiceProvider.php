@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Product;
 use App\Models\WebSettings;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -24,5 +25,12 @@ class AppServiceProvider extends ServiceProvider
         //
         $getWebData = WebSettings::first();
         View::share('getWebData', $getWebData);
+
+        // $getProduct = Product::all();
+        // View::share('getProduct', $getProduct);
+
+        // View::composer(['frontend.*'], function ($view) {
+        //     $view->with('getProduct', Product::all());
+        // });
     }
 }

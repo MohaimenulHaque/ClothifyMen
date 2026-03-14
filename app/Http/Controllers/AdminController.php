@@ -130,6 +130,7 @@ class AdminController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'nullable|email|max:255',
             'contact' => 'nullable|numeric|digits:11',
+            'address' => 'nullable|string',
 
             'logo' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
             'favicon' => 'nullable|image|mimes:png,jpg,jpeg,ico|max:1024',
@@ -169,10 +170,11 @@ class AdminController extends Controller
         $settings->website_name = $request->name;
         $settings->email = $request->email;
         $settings->contact = $request->contact;
+        $settings->address = $request->address;
 
         $settings->facebook_link = $request->facebook_link;
         $settings->instagram_link = $request->instagram_link;
-        $settings->linkedin_link = $request->linkedin_link;
+        $settings->youtube_link = $request->youtube_link;
 
         $settings->save();
         flash()->success('Settings Update Successfully');

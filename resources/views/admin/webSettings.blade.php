@@ -41,6 +41,14 @@
                                     @error('contact')<div class="text-danger">{{ $message }}</div>@enderror
                                 </div>
 
+                                <div class="col-md-6 mb-2">
+                                    <label for="">Address</label>
+                                    <input type="text" name="address" placeholder="shop-no. ,street, city..."
+                                        value="{{ old('address', $fetchSettingsData?->address) }}"
+                                        class="form-control mb-2">
+                                    @error('address')<div class="text-danger">{{ $message }}</div>@enderror
+                                </div>
+
 
                                 <div class="col-md-12 mt-4 mb-1">
                                     <h2 class="heading">Logos</h2>
@@ -70,23 +78,23 @@
 
                                 <div class="col-md-6 mb-2">
                                     <label for="">Facebook Link</label>
-                                    <input type="text" name="facebook" placeholder="https://www.facebook.com/"
-                                        value="{{ old('facebook', $fetchSettingsData?->facebook_link) }}" class="form-control mb-2">
-                                    @error('facebook')<div class="text-danger">{{ $message }}</div>@enderror
+                                    <input type="text" name="facebook_link" placeholder="https://www.facebook.com/"
+                                        value="{{ old('facebook_link', $fetchSettingsData?->facebook_link) }}" class="form-control mb-2">
+                                    @error('facebook_link')<div class="text-danger">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="col-md-6 mb-2">
                                     <label for="">Instagram Link</label>
-                                    <input type="text" name="instagram" placeholder="https://www.instagram.com/"
-                                        value="{{ old('instagram', $fetchSettingsData?->instagram_link) }}" class="form-control mb-2">
-                                    @error('instagram')<div class="text-danger">{{ $message }}</div>@enderror
+                                    <input type="text" name="instagram_link" placeholder="https://www.instagram.com/"
+                                        value="{{ old('instagram_link', $fetchSettingsData?->instagram_link) }}" class="form-control mb-2">
+                                    @error('instagram_link')<div class="text-danger">{{ $message }}</div>@enderror
                                 </div>
 
                                 <div class="col-md-6 mb-2">
-                                    <label for="">Linkedin Link</label>
-                                    <input type="text" name="linkedin" placeholder="https://www.linkedin.com/feed/"
-                                        value="{{ old('linkedin', $fetchSettingsData?->linkedin_link) }}" class="form-control mb-2">
-                                    @error('linkedin')<div class="text-danger">{{ $message }}</div>@enderror
+                                    <label for="">YouTube Link</label>
+                                    <input type="text" name="youtube_link" placeholder="https://www.youtube.com/"
+                                        value="{{ old('youtube_link', $fetchSettingsData?->youtube_link) }}" class="form-control mb-2">
+                                    @error('youtube_link')<div class="text-danger">{{ $message }}</div>@enderror
                                 </div>
 
 

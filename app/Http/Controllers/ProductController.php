@@ -28,6 +28,7 @@ class ProductController extends Controller
             'name' => 'required',
             'category' => 'required',
             'price' => 'required|numeric|min:0',
+            'regular_price' => 'nullable|numeric|min:0',
             'image' => 'required|image|mimes:jpg,png,jpeg,webp',
             'description' => 'required',
         ]);
@@ -39,10 +40,23 @@ class ProductController extends Controller
         $image_name = $image->getClientOriginalName();
         $image->move(public_path('upload/products'), $image_name);
 
+
+        if($request->regular_price){
+            $regular_price = $request->regular_price;
+            $price = $request->price;
+            $discount = round((($regular_price - $price) / $regular_price) * 100);
+        }
+        else{
+            $discount = 0;
+        }
+
+
+
         $product->category_id = $request->category;
         $product->product_name = $request->name;
         $product->price = $request->price;
         $product->regular_price = $request->regular_price;
+        $product->discount = $discount ;
         $product->img = $image_name;
         $product->quantity = $request->quantity;
         $product->description = $request->description;
