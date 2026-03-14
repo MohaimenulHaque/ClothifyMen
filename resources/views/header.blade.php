@@ -4,7 +4,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
 
             <a class="navbar-brand m-1" href="index.html">
-                <span>
+                <span class="app_name">
                     {{config('app.name')}}
                 </span>
             </a>
@@ -13,7 +13,7 @@
                 <span class=""></span>
             </button>
 
-            <div class="container">
+            <div class="container m-0 p-0">
                 
                 <div class="collapse navbar-collapse bg-dark" id="navbarSupportedContent">
                     <ul class="navbar-nav  ">

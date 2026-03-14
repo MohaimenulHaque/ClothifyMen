@@ -4,9 +4,11 @@
 @section('slide_section')
 
     <!-- slider section -->
-    <section class="slider_section container">
-        <div class="w-100 m-0 p-0">
-            <img style=" width: 100%;" src="frontend/img/img1.jpg" alt="" />
+    <section class="container p-0">
+        <div class="row">
+            <div class="col-12">
+                <img class="img-fluid w-100" src="frontend/img/img1.jpg" alt="">
+            </div>
         </div>
     </section>
     <!-- end slider section -->
@@ -20,16 +22,23 @@
     <!-- shop section -->
     <section class="shop_section layout_padding">
         <div class="container">
-            <div class="heading_container heading_center">
-                <h2>
+            {{-- <div class="heading_container heading_center">
+                <h3>
                     Latest Products
-                </h2>
+                </h3>
+            </div> --}}
+
+            <div class="d-flex align-items-center">
+                <div class="flex-grow-1 border-top"></div>
+                <h4 class="mb-0 text-center" >Latest Products</h4>
+                <div class="flex-grow-1 border-top"></div>
             </div>
+            
             <div class="row">
 
                 @foreach ($getLatestProduct as $product)
 
-                    <div class="col-4 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-2">
+                    <div class="col-4 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1 mb-3">
                         <div class="box">
 
                             <a href="#">
@@ -49,7 +58,7 @@
 
                             <div class="bottom-part d-flex flex-column justify-center text-center">
 
-                                <h6 class="m-0">{{ $product->product_name }}</h6>
+                                <h6 class="m-0 product_name">{{ $product->product_name }}</h6>
                                 <h6>
                                     <span class="price">৳{{ $product->price }}</span>
 
