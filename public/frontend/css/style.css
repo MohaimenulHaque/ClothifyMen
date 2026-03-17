@@ -8,8 +8,8 @@ body {
 }
 
 .layout_padding {
-  padding-top: 50px;
-  padding-bottom: 90px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .layout_padding2 {
@@ -435,7 +435,7 @@ a:focus {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-top: 45px;
+  margin-top: 25px;
 }
 
 .shop_section .btn-box a {
