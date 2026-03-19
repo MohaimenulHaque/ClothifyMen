@@ -65,11 +65,30 @@
                                     @endif
                                 </h6>
 
-                                <div class="discount">
-                                    <span>20%</span>
-                                </div>
+                                @if ($product->discount > 0)
+                                    <div class="discount">
+                                        <span>{{ $product->discount }}%</span>
+                                    </div>
+                                @endif
 
-                                <button type="button" class="btn btn-dark w-100 addToCart" data-id="{{ $product->id }}">Add to Cart</button>
+
+                                @php
+                                    $cart = session('cart', []);
+                                @endphp
+
+                                @if (isset($cart[$product->id]))
+                                
+                                    <div class="w-100 d-flex qty_box">
+                                        <button type="button" class="btn btn-dark">-</button>
+                                        <input type="text" readonly value="1" class="w-100 text-center">
+                                        <button type="button" class="btn btn-dark">+</button>
+                                    </div>
+
+                                @else
+                                    <button type="button" class="btn btn-dark w-100 addToCart" data-id="{{ $product->id }}">Add to Cart</button>
+
+                                @endif
+
 
                             </div>
 
@@ -104,11 +123,17 @@
     <section class="shop_section layout_padding">
         <div class="container">
 
+            <div class="d-flex align-items-center">
+                <div class="flex-grow-1 border-top"></div>
+                <h4 class="mb-0 text-center" >Latest Products</h4>
+                <div class="flex-grow-1 border-top"></div>
+            </div>
+            
             <div class="row">
 
                 @foreach ($getLatestProduct as $product)
 
-                    <div class="col-4 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1 mb-3">
+                    <div class="col-4 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1 mb-1 product_data">
                         <div class="box">
 
                             <a href="#">
@@ -128,6 +153,7 @@
 
                             <div class="bottom-part d-flex flex-column justify-center text-center">
 
+                                {{-- <input type="hidden" class="prod_id" value="{{ $product->id }}"> --}}
                                 <h6 class="m-0 product_name">{{ $product->product_name }}</h6>
                                 <h6>
                                     <span class="price">৳{{ $product->price }}</span>
@@ -139,11 +165,13 @@
                                     @endif
                                 </h6>
 
-                                <div class="discount">
-                                    <span>20%</span>
-                                </div>
+                                @if ($product->discount > 0)
+                                    <div class="discount">
+                                        <span>{{ $product->discount }}%</span>
+                                    </div>
+                                @endif
 
-                                <button class="btn btn-dark w-100">Add to Cart</button>
+                                <button type="button" class="btn btn-dark w-100 addToCart" data-id="{{ $product->id }}">Add to Cart</button>
 
                             </div>
 

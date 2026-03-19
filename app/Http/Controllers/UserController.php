@@ -28,4 +28,10 @@ class UserController extends Controller
         $getLatestProduct = Product::latest()->take(6)->get();
         return view('welcome', compact('getLatestProduct'));
     }
+
+    public function addToCart(){
+        return view('addToCart');
+    }
+
+    
 }

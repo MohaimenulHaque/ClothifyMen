@@ -431,10 +431,18 @@ a:focus {
   padding: 8px 6px 10px 15px;
   /* dynamic size */
   border-radius: 0 0 0 50px;
-  /* pill shape */
 
   font-size: 12px;
   font-weight: 600;
+}
+
+.qty_box input{
+  border: none;
+  outline: none;
+}
+.qty_box input:focus{
+  border: none;
+  outline: none;
 }
 
 .shop_section .btn-box {

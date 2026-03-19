@@ -25,6 +25,7 @@ Route::get('shop', function () {
 
 
 Route::get('/', [UserController::class, 'home'])->name('home');
+Route::get('/add-to-cart', [UserController::class, 'addToCart'])->name('add-to-cart-page');
 
 // ------------------------------------------
 // AddToCart Controller Start Here

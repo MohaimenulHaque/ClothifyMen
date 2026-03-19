@@ -66,7 +66,7 @@
 
                         @endif
 
-                        <a href="" class="d-flex">
+                        <a href="{{ route('add-to-cart-page') }}" class="d-flex">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                             <div id="cart-count" class="cart_count">{{ session('cart',[]) ? count(session('cart',[])) : 0 }}</div>
                         </a>
