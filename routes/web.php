@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddToCartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -7,11 +8,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpFoundation\RequestMatcher\HeaderRequestMatcher;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('home');
 
-Route::get('/', [UserController::class, 'home'])->name('home');
 
 
 Route::get('shop', function () {
@@ -19,9 +16,23 @@ Route::get('shop', function () {
 })->name('shop');
 
 
-Route::get('/test', function () {
-    return view('test');
-})->name('test');
+// Route::get('/test', function () {
+//     return view('test');
+// })->name('test');
+
+
+
+
+
+Route::get('/', [UserController::class, 'home'])->name('home');
+
+// ------------------------------------------
+// AddToCart Controller Start Here
+// ------------------------------------------
+
+Route::post('/cart/add',[AddToCartController::class, 'add'])->name('addToCart');
+
+
 
 
 

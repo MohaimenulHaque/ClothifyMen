@@ -246,6 +246,15 @@ a:focus {
   margin-left: 5px;
 }
 
+.cart_count{
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  border-radius: 50%;
+}
+
 /*end header section*/
 
 

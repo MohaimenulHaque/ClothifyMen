@@ -66,14 +66,15 @@
 
                         @endif
 
-                        <a href="">
+                        <a href="" class="d-flex">
                             <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                            <div id="cart-count" class="cart_count">{{ session('cart',[]) ? count(session('cart',[])) : 0 }}</div>
                         </a>
-                        <form class="form-inline ">
+                        {{-- <form class="form-inline ">
                             <button class="btn nav_search-btn" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
-                        </form>
+                        </form> --}}
 
                     </div>
 

@@ -13,6 +13,8 @@
     <meta name="author" content="" />
     <link rel="shortcut icon" href="{{ asset('frontend/img/Favicon.png') }}" type="image/x-icon">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title> {{config('app.name', 'Laravel')}} </title>
 
     <!-- slider stylesheet -->
@@ -130,7 +132,9 @@
     <!-- end info section -->
 
 
-    <script src="{{ asset('frontend/js/jquery-3.4.1.min.js') }}"></script>
+    @stack('script')
+
+    {{-- <script src="{{ asset('frontend/js/jquery-3.4.1.min.js') }}"></script> --}}
     <script src="{{ asset('frontend/js/bootstrap.js') }}"></script>
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --}}
     {{-- <script src="{{ asset('frontend/js/custom.js') }}"></script> --}}

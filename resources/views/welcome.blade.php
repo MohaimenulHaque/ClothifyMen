@@ -33,7 +33,7 @@
 
                 @foreach ($getLatestProduct as $product)
 
-                    <div class="col-4 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1 mb-1">
+                    <div class="col-4 col-sm-6 col-md-4 col-lg-3 col-xl-2 px-1 mb-1 product_data">
                         <div class="box">
 
                             <a href="#">
@@ -53,6 +53,7 @@
 
                             <div class="bottom-part d-flex flex-column justify-center text-center">
 
+                                {{-- <input type="hidden" class="prod_id" value="{{ $product->id }}"> --}}
                                 <h6 class="m-0 product_name">{{ $product->product_name }}</h6>
                                 <h6>
                                     <span class="price">৳{{ $product->price }}</span>
@@ -68,7 +69,7 @@
                                     <span>20%</span>
                                 </div>
 
-                                <button class="btn btn-dark w-100">Add to Cart</button>
+                                <button type="button" class="btn btn-dark w-100 addToCart" data-id="{{ $product->id }}">Add to Cart</button>
 
                             </div>
 
@@ -169,3 +170,41 @@
 
 
 @endsection
+@push('script')
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $(document).on('click', '.addToCart', function (e) { 
+                e.preventDefault();
+
+                var product_id = $(this).data('id');
+                // alert(product_id);
+
+                $.ajax({
+                    method: "post",
+                    url: "{{ url('/cart/add') }}",
+                    data: {
+                        'product_id' : product_id,
+                    },
+                    success: function (response) {
+                        // alert(response.status);
+                        $('#cart-count').text(response.count);
+                    }
+                });
+                // console.log(product_id);
+            });
+
+        });
+
+    </script>
+
+@endpush
