@@ -32,6 +32,7 @@ Route::get('/add-to-cart', [UserController::class, 'addToCart'])->name('add-to-c
 // ------------------------------------------
 
 Route::post('/cart/add',[AddToCartController::class, 'add'])->name('addToCart');
+Route::post('/cart/update', [AddToCartController::class, 'update']);
 
 
 
